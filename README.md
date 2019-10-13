@@ -6,14 +6,6 @@
 
 ### Links and Resources
 * [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
-
-#### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [style guide](http://xyz.com) (React assignments)
 
 ### Modules
 #### `modulename.js`
@@ -27,20 +19,26 @@ Usage Notes or examples
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `REACT_APP_API` 
+* `REACT_APP_SECRET` 
+* `REACT_APP_Q_SERVER`
 
 #### Running the app
 * `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
-  
-#### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+* Endpoint: `https://api-js401.herokuapp.com/api/v1/todo`
+  * Returns a JSON object with `count`, `results` -> [ `difficulty`: int, `complete`: boolean, `_id`: string, `text`: string, `assignee`: string, `due`: string, `__v`: string ].
+```
+{  
+  "count": 6,
+  "results": [
+  {
+    "difficulty": 3,
+    "complete": true,
+    "_id": "5da25d1cd77c3700175410d7",
+    "text": "Hi John",
+    "assignee": "John",
+    "due": "2019-10-12T00:00:00.000Z",
+    "__v": 0
+  }
+}
 
-#### UML
-Link to an image of the UML for your application and response to events

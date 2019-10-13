@@ -5,6 +5,11 @@ import TodoForm from "./form.js";
 import TodoList from "./list.js";
 import TodoItem from "./item.js";
 
+import { connect } from 'react-redux';
+
+import * as actions from '../../store/actions.js';
+
+
 import Auth from '../auth/auth.js';
 import useQ from '../../hooks/q.js';
 
@@ -115,4 +120,15 @@ const ToDo = () => {
   );
 };
 
-export default ToDo;
+const mapStateToProps = state => ({
+  todo: state.toDo,
+});
+
+const mapDispatchToProps = (dispatch, getState) => ({
+  get: () => dispatch(actions.getRemoteData()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ToDo);
